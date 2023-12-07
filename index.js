@@ -19,7 +19,7 @@ connect()
 
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://poshan.in",
     credentials: true
 }))
 app.use(express.json())
