@@ -5,6 +5,8 @@ import cors from "cors"
 import connect from "./config/db.js"
 import router from "./routes/Allroutes.js"
 import paymentRouter from "./routes/payment.js"
+import blogRouter from "./routes/Blogs.js"
+import adminAuth from "./routes/AdminAuth.js"
 
 //configuration
 
@@ -19,7 +21,7 @@ connect()
 
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://poshan.in",
+    origin: ["https://poshan.in","http://localhost:5173"],
     credentials: true
 }))
 app.use(express.json())
@@ -28,6 +30,8 @@ app.use(express.json())
 
 app.use("/users",router)
 app.use("/payment",paymentRouter)
+app.use("/blogs",blogRouter)
+app.use("/admin",adminAuth)
 
 
 // spin up the server

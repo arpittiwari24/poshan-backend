@@ -1,6 +1,6 @@
 import Users from "../models/User.js";
 import bcrypt from "bcrypt"
-import storeCookie from "../utils/features.js";
+import { storeCookie } from "../utils/features.js";
 
 
 export const register = async (req,res) => {
@@ -43,7 +43,7 @@ export const login = async (req,res) => {
 
 export const logout = (req, res) => {
     
-      res.clearCookie('token')
+      res.clearCookie("token")
   };
 
   export const myProfile = (req,res) => {
