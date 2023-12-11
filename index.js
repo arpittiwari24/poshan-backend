@@ -23,7 +23,7 @@ connect()
 
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["https://poshan-admin.vercel.app","https://poshan.in","http://localhost:5173"],
     credentials: true
 }))
 app.use(express.json())
