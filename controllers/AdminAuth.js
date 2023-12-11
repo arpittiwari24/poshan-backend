@@ -44,11 +44,11 @@ export const adminLogin = async (req,res) => {
 
 export const adminLogout = (req, res) => {
     
-      res.clearCookie("token")
+    res.cookie('admintoken', '').json('ok');
   };
 
   export const adminMyProfile = (req,res) => {
-    
+
     const name = req.user.name
     res.status(200).json({
           success: true,

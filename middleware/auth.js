@@ -19,14 +19,14 @@ export const isAuthenticated = async (req,res,next)=> {
 }
 
 export const isAdminAuthenticated = async (req,res,next)=> {
-    const {admin_token} = req.cookies
+    const {admintoken} = req.cookies
 
-    if(!admin_token) return res.status(404).json({
+    if(!admintoken) return res.status(404).json({
         success: false,
         message:"please login"
     })
 
-    const decoded = jwt.verify(admin_token,process.env.JWT_SECRET)
+    const decoded = jwt.verify(admintoken,process.env.JWT_SECRET)
 
     req.user = await admin.findById(decoded._id)
 
