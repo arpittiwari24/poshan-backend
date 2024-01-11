@@ -7,6 +7,7 @@ import router from "./routes/Allroutes.js"
 import paymentRouter from "./routes/payment.js"
 import blogRouter from "./routes/Blogs.js"
 import adminAuth from "./routes/AdminAuth.js"
+import passport from "passport"
 
 //configuration
 
@@ -24,6 +25,8 @@ app.use(cors({
     origin: ["https://poshan-admin.vercel.app","https://poshan.in","http://localhost:5173"],
     credentials: true
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(express.json())
 
 //routes
