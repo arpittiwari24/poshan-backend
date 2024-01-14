@@ -25,8 +25,8 @@ app.use(cors({
     origin: ["https://poshan-admin.vercel.app","https://poshan.in","http://localhost:5173"],
     credentials: true
 }))
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(passport.initialize())
+// app.use(express.ses)
 app.use(express.json())
 
 //routes
