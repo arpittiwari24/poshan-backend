@@ -8,6 +8,7 @@ import paymentRouter from "./routes/payment.js"
 import blogRouter from "./routes/Blogs.js"
 import adminAuth from "./routes/AdminAuth.js"
 import passport from "passport"
+import activate from "./routes/activate.js"
 
 //configuration
 
@@ -35,7 +36,7 @@ app.use("/users",router)
 app.use("/payment",paymentRouter)
 app.use("/blogs",blogRouter)
 app.use("/admin",adminAuth)
-
+app.use("/activate",activate)
 
 // spin up the server
 
